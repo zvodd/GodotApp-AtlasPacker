@@ -1,4 +1,5 @@
-extends Node2D
+class_name Artboard
+extends Control
 
 var grid_size = Vector2(32, 32)
 var image_tiles = {}
@@ -17,25 +18,16 @@ func draw_grid():
 	var height = get_viewport_rect().size.y
 
 	for i in range(1, int(width / grid_size.x)):
-		draw_line(Vector2(i * grid_size.x, 0), Vector2(i * grid_size.x, height), Color.gray)
+		draw_line(Vector2(i * grid_size.x, 0), Vector2(i * grid_size.x, height), Color.GREEN_YELLOW)
 
 	for i in range(1, int(height / grid_size.y)):
-		draw_line(Vector2(0, i * grid_size.y), Vector2(width, i * grid_size.y), Color.gray)
+		draw_line(Vector2(0, i * grid_size.y), Vector2(width, i * grid_size.y), Color.GREEN_YELLOW)
 
 func _can_drop_data(at_position, data):
-	return data.type == "files" or data.type == "image_tile"
+	return  data.type == "image_tile"
 
 func _drop_data(at_position, data):
-	if data.type == "files":
-		var files = data.files
-		for file in files:
-			var image_tile = ImageTile.new()
-			image_tile.file_name = file
-			image_tile.position = at_position
-			image_tile.scale = Vector2(1, 1)
-			image_tile.uid = OS.get_unique_id()
-			add_image_tile(image_tile)
-	elif data.type == "image_tile":
+	if data.type == "image_tile":
 		var image_tile = data.image_tile
 		image_tile.position = at_position
 		if not image_tiles.has(image_tile.uid):
@@ -66,3 +58,6 @@ func _get_drag_data(p_pos):
 				update()
 				return data
 	return null
+
+func update():pass
+#func set_drag_preview(_a):pass

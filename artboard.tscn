@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b36oehg63os35"]
+[gd_scene format=3 uid="uid://b36oehg63os35"]
 
-[ext_resource type="Script" path="res://scripts/artboard.gd" id="1_ff2t0"]
+[ext_resource type="Script" uid="uid://sk65b4wdt0lw" path="res://scripts/artboard.gd" id="1_ff2t0"]
 
-[node name="artboard" type="Node2D" unique_id=1760129244]
+[node name="artboard" type="Control" unique_id=1975191866]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_ff2t0")

@@ -1,19 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq3huk364skd3"]
+[gd_scene format=3 uid="uid://bq3huk364skd3"]
 
 [ext_resource type="Theme" uid="uid://b4apxgfyaatns" path="res://ui_theme/theme.tres" id="1_sb8mv"]
-[ext_resource type="Script" path="res://scripts/image_loader.gd" id="2_abcde"]
-[ext_resource type="Script" path="res://scripts/image_pool.gd" id="3_fghij"]
+[ext_resource type="Script" uid="uid://ctt6hldl4331i" path="res://scripts/image_loader.gd" id="2_abcde"]
+[ext_resource type="PackedScene" uid="uid://b36oehg63os35" path="res://artboard.tscn" id="3_6ydbi"]
+[ext_resource type="Script" uid="uid://pys50ioo35ot" path="res://scripts/image_pool.gd" id="3_fghij"]
 
-[node name="Control" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ImageLoader" type="Node" unique_id=626847738]
+script = ExtResource("2_abcde")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
+[node name="Panel" type="Panel" parent="." unique_id=240896428]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -21,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_sb8mv")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1371060754]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,12 +24,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MenuBar" type="MenuBar" parent="Panel/VBoxContainer"]
+[node name="MenuBar" type="MenuBar" parent="Panel/VBoxContainer" unique_id=286757585]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
 flat = true
 
-[node name="File" type="PopupMenu" parent="Panel/VBoxContainer/MenuBar"]
+[node name="File" type="PopupMenu" parent="Panel/VBoxContainer/MenuBar" unique_id=935545317]
+oversampling_override = 1.0
 visible = true
 item_count = 2
 item_0/text = "Open"
@@ -42,32 +39,32 @@ item_0/id = 0
 item_1/text = "Export"
 item_1/id = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1785336403]
 layout_mode = 2
 
-[node name="SidePanel_VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="SidePanel_VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1877717095]
 layout_mode = 2
 
-[node name="GlobalConfig_FoldableContainer" type="FoldableContainer" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer"]
+[node name="GlobalConfig_FoldableContainer" type="FoldableContainer" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer" unique_id=1199265401]
 layout_mode = 2
 
-[node name="ImagePool_FoldableContainer" type="FoldableContainer" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer"]
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer" unique_id=376306090]
+custom_minimum_size = Vector2(180, 50)
 layout_mode = 2
 
-[node name="ImagePool_ItemList" type="ItemList" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/ImagePool_FoldableContainer"]
+[node name="ImagePool_FoldableContainer" type="FoldableContainer" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer" unique_id=1598848417]
 layout_mode = 2
+
+[node name="ImagePool_ItemList" type="ItemList" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/ImagePool_FoldableContainer" unique_id=301481568]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 200)
+layout_mode = 2
+allow_search = false
+auto_width = true
+scroll_hint_mode = 1
+fixed_icon_size = Vector2i(64, 64)
 script = ExtResource("3_fghij")
 
-[node name="ArtBoard_SubViewportContainer" type="SubViewportContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="Artboard" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1760129244 instance=ExtResource("3_6ydbi")]
+unique_name_in_owner = true
 layout_mode = 2
-stretch = true
-
-[node name="ArtBoard_SubViewport" type="SubViewport" parent="Panel/VBoxContainer/HBoxContainer/ArtBoard_SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(2, 68)
-render_target_update_mode = 4
-
-[node name="ImageLoader" type="Node" parent="."]
-script = ExtResource("2_abcde")
-
-[connection signal="id_pressed" from="Panel/VBoxContainer/MenuBar/File" to="ImageLoader" method="open_file_dialog" binds=[0]]
