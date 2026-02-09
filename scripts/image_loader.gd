@@ -31,8 +31,7 @@ func open_file_dialog():
 
 func _on_files_selected(files:PackedStringArray):
 	for file in files:
-		var image_tile = ImageTile.new()
-		image_tile.file_name = file
-		image_tile.get_ui()
+		var image_tile = ImageTile.new(file)
+		#image_tile.file_name = file
 		print(image_tile.uid)
 		image_pool.add_image_tile(image_tile)

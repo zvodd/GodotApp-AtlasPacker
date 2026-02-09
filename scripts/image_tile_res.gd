@@ -7,11 +7,18 @@ var scale : Vector2
 var crop : Rect2i
 var texture : Texture2D
 var image : Image
-var uid : String
+var uid : int
 
-func get_ui():
+## Requires a filepath
+func _init(path):
+	file_name = path
+	get_ui()
+
+
+func get_ui() -> int:
 	if not uid:
-		uid = "ID_%s_%d" % [Time.get_datetime_string_from_system(), randi()]
+		uid = ResourceUID.create_id()
+		ResourceUID.add_id(uid, "res://FAKE_PATH_FOR_UID_GEN")
 	return uid
 
 func get_image():

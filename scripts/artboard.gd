@@ -1,7 +1,7 @@
 class_name Artboard
 extends Control
 
-var grid_size = Vector2(32, 32)
+var grid_size = Vector2i(32, 32)
 var image_tiles = {}
 
 func _draw():
@@ -29,8 +29,8 @@ func _can_drop_data(_at_position, data):
 
 func _drop_data(at_position, data):
 	if data.type == "image_tile":
-		var image_tile = data.image_tile
-		image_tile.position = at_position
+		var image_tile: ImageTile = data.image_tile
+		image_tile.position = at_position.snapped(grid_size)
 		if not image_tiles.has(image_tile.uid):
 			add_image_tile(image_tile)
 		update()
@@ -63,6 +63,10 @@ func _get_drag_data(p_pos):
 				update()
 				return data
 	return null
+
+
+func remove_from_board_(uid:int):
+	image_tiles.erase(uid)
 
 func update():
 	queue_redraw()
