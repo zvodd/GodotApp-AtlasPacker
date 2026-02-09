@@ -1,12 +1,16 @@
 [gd_resource type="Theme" format=3 uid="uid://b4apxgfyaatns"]
 
 [ext_resource type="Texture2D" uid="uid://cq66dv3vyb0h1" path="res://ui_theme/textures/vslider_increment.png" id="1_1pfde"]
-[ext_resource type="Texture2D" uid="uid://bmqyv42i1vaah" path="res://ui_theme/textures/panel_container.png" id="1_wvi88"]
+[ext_resource type="FontFile" uid="uid://hbk46ctxgvwq" path="res://ui_theme/font/Perfect DOS VGA 437 Win.ttf" id="1_y1itd"]
 [ext_resource type="Texture2D" uid="uid://c8bf1bybg14uu" path="res://ui_theme/textures/hscroll_increment.png" id="2_qnk3e"]
+[ext_resource type="Texture2D" uid="uid://fnxwevrcu35o" path="res://ui_theme/textures/panel_window.png" id="4_6lxpu"]
 [ext_resource type="Texture2D" uid="uid://dmtjft6ljt426" path="res://ui_theme/textures/window_stripe_only.png" id="4_ow4oa"]
 [ext_resource type="Texture2D" uid="uid://b3a8cojaaemol" path="res://ui_theme/textures/window_stripe_only_grey.png" id="4_r7vgm"]
 [ext_resource type="Texture2D" uid="uid://bgf52b16s6o21" path="res://ui_theme/textures/popup_menu_panel.png" id="5_qnk3e"]
 [ext_resource type="Texture2D" uid="uid://cae3g40yeap6f" path="res://ui_theme/textures/seperator_horizontal.png" id="6_ow4oa"]
+[ext_resource type="FontFile" uid="uid://bp3d7g7mqupgu" path="res://ui_theme/font/microsoft_sans_serif.ttf" id="8_m6hjx"]
+[ext_resource type="Texture2D" uid="uid://dy2n7fllqbp30" path="res://ui_theme/textures/tree_arrow.png" id="10_u7pvt"]
+[ext_resource type="Texture2D" uid="uid://cbydcywhi42do" path="res://ui_theme/textures/tree_arrow_up.png" id="11_mfugg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6akc0"]
 content_margin_left = 8.0
@@ -68,13 +72,11 @@ region_rect = Rect2(0, 0, 23, 23)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udmbm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1pfde"]
-texture = ExtResource("1_wvi88")
+texture = ExtResource("4_6lxpu")
 texture_margin_left = 2.0
-texture_margin_right = 2.0830636
-texture_margin_bottom = 1.9111379
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-region_rect = Rect2(2, 2, 14, 14)
+texture_margin_right = 1.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 2, 26, 24)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y1itd"]
 load_path = "res://.godot/imported/window_stripe_only_grey_grad.png-cd1ea188964f993492b785cf924dbdf1.ctex"
@@ -132,7 +134,8 @@ region_rect = Rect2(0, 0, 8, 4)
 region_rect = Rect2(0, 0, 8, 4)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1pfde"]
-bg_color = Color(0.8862615, 0.8862615, 0.88626134, 1)
+bg_color = Color(0.7529412, 0.7529412, 0.7529412, 1)
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnk3e"]
 
@@ -156,6 +159,18 @@ content_margin_top = 4.0
 content_margin_right = 6.0
 content_margin_bottom = 4.0
 region_rect = Rect2(0, 0, 23, 23)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6hjx"]
+bg_color = Color(0.7529412, 0.7529412, 0.7529412, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+corner_detail = 1
+shadow_color = Color(0, 0, 0, 0.7529412)
+shadow_size = 1
+anti_aliasing = false
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qyqha"]
 content_margin_left = 6.0
@@ -395,6 +410,8 @@ CheckButton/styles/hover = SubResource("StyleBoxEmpty_oyn5l")
 CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_53mcq")
 CheckButton/styles/normal = SubResource("StyleBoxEmpty_10nrd")
 CheckButton/styles/pressed = SubResource("StyleBoxEmpty_udmbm")
+FoldableContainer/font_sizes/font_size = 15
+FoldableContainer/fonts/font = ExtResource("1_y1itd")
 FoldableContainer/icons/expanded_arrow = ExtResource("1_1pfde")
 FoldableContainer/icons/folded_arrow = ExtResource("2_qnk3e")
 FoldableContainer/styles/panel = SubResource("StyleBoxTexture_1pfde")
@@ -432,7 +449,7 @@ Label/constants/shadow_offset_x = 0
 Label/constants/shadow_offset_y = 0
 Label/constants/shadow_outline_size = 0
 Label/font_sizes/font_size = 11
-Label/fonts/font = null
+Label/fonts/font = ExtResource("8_m6hjx")
 Label/styles/normal = null
 LineEdit/colors/caret_color = Color(0, 0, 0, 1)
 LineEdit/colors/clear_button_color = Color(0, 0, 0, 1)
@@ -452,6 +469,13 @@ LineEdit/icons/clear = null
 LineEdit/styles/focus = SubResource("StyleBoxTexture_15vrp")
 LineEdit/styles/normal = SubResource("StyleBoxTexture_2j3fx")
 LineEdit/styles/read_only = SubResource("StyleBoxTexture_wvc0o")
+MenuBar/colors/font_color = Color(0, 0, 0, 1)
+MenuBar/colors/font_hover_pressed_color = Color(0.4006974, 0.40069786, 0.40069747, 1)
+MenuBar/fonts/font = ExtResource("8_m6hjx")
+MenuBar/styles/hover = SubResource("StyleBoxFlat_m6hjx")
+MenuBar/styles/hover_pressed = SubResource("StyleBoxFlat_m6hjx")
+MenuBar/styles/normal = SubResource("StyleBoxFlat_m6hjx")
+MenuBar/styles/pressed = SubResource("StyleBoxFlat_m6hjx")
 OptionButton/colors/font_color = Color(0, 0, 0, 1)
 OptionButton/colors/font_disabled_color = Color(0, 0, 0, 1)
 OptionButton/colors/font_focus_color = Color(0, 0, 0, 1)
@@ -493,8 +517,8 @@ PopupMenu/constants/separator_outline_size = 0
 PopupMenu/constants/v_separation = 4
 PopupMenu/font_sizes/font_separator_size = 11
 PopupMenu/font_sizes/font_size = 11
-PopupMenu/fonts/font = null
-PopupMenu/fonts/font_separator = null
+PopupMenu/fonts/font = ExtResource("8_m6hjx")
+PopupMenu/fonts/font_separator = ExtResource("8_m6hjx")
 PopupMenu/icons/checked = null
 PopupMenu/icons/checked_disabled = null
 PopupMenu/icons/radio_checked = null
@@ -520,6 +544,14 @@ ProgressBar/font_sizes/font_size = 11
 ProgressBar/fonts/font = null
 ProgressBar/styles/background = SubResource("StyleBoxTexture_wapvm")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_fusbp")
+SpinBox/icons/down = ExtResource("10_u7pvt")
+SpinBox/icons/down_disabled = ExtResource("10_u7pvt")
+SpinBox/icons/down_hover = ExtResource("10_u7pvt")
+SpinBox/icons/down_pressed = ExtResource("10_u7pvt")
+SpinBox/icons/up = ExtResource("11_mfugg")
+SpinBox/icons/up_disabled = ExtResource("11_mfugg")
+SpinBox/icons/up_hover = ExtResource("11_mfugg")
+SpinBox/icons/up_pressed = ExtResource("11_mfugg")
 SpinBox/icons/updown = null
 TabContainer/colors/drop_mark_color = Color(0, 0, 0, 1)
 TabContainer/colors/font_disabled_color = Color(0.317647, 0.317647, 0.317647, 1)
@@ -640,7 +672,6 @@ Window/constants/resize_margin = 4
 Window/constants/title_height = 28
 Window/constants/title_outline_size = 0
 Window/font_sizes/title_font_size = 11
-Window/fonts/title_font = null
 Window/icons/close = null
 Window/icons/close_pressed = null
 Window/styles/embedded_border = SubResource("StyleBoxTexture_ovoc8")

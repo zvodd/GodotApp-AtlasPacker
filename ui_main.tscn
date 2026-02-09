@@ -5,6 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://b36oehg63os35" path="res://artboard.tscn" id="3_6ydbi"]
 [ext_resource type="Script" uid="uid://pys50ioo35ot" path="res://scripts/image_pool.gd" id="3_fghij"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ydbi"]
+bg_color = Color(0.8474744, 0.84747446, 0.8474743, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7529412, 0.7529412, 0.7529412, 1)
+
 [node name="ImageLoader" type="Node" unique_id=626847738]
 script = ExtResource("2_abcde")
 
@@ -27,13 +35,11 @@ grow_vertical = 2
 [node name="MenuBar" type="MenuBar" parent="Panel/VBoxContainer" unique_id=286757585]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 0
 flat = true
 
 [node name="File" type="PopupMenu" parent="Panel/VBoxContainer/MenuBar" unique_id=935545317]
 oversampling_override = 1.0
 size = Vector2i(195, 100)
-visible = true
 item_count = 4
 item_0/text = "Open"
 item_0/id = 0
@@ -44,6 +50,23 @@ item_2/separator = true
 item_3/text = "Hello"
 item_3/id = 3
 
+[node name="Sample" type="PopupMenu" parent="Panel/VBoxContainer/MenuBar" unique_id=61045446]
+oversampling_override = 1.0
+size = Vector2i(195, 100)
+item_count = 4
+item_0/text = "Open"
+item_0/id = 0
+item_0/disabled = true
+item_1/text = "Export"
+item_1/id = 1
+item_1/disabled = true
+item_2/id = 2
+item_2/disabled = true
+item_2/separator = true
+item_3/text = "Hello"
+item_3/id = 3
+item_3/disabled = true
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1785336403]
 layout_mode = 2
 
@@ -52,21 +75,68 @@ layout_mode = 2
 
 [node name="GlobalConfig_FoldableContainer" type="FoldableContainer" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer" unique_id=1199265401]
 layout_mode = 2
+title = "Properties"
 
-[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer" unique_id=376306090]
-custom_minimum_size = Vector2(180, 50)
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer" unique_id=1763451856]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ydbi")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer" unique_id=863876916]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer/MarginContainer" unique_id=94549895]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer/MarginContainer/VBoxContainer" unique_id=1913613753]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=120756081]
+layout_mode = 2
+text = "Grid Width"
+
+[node name="SpinBox" type="SpinBox" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1122031868]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+min_value = 2.0
+max_value = 4096.0
+value = 2.0
+rounded = true
+custom_arrow_step = 2.0
+custom_arrow_round = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer/MarginContainer/VBoxContainer" unique_id=112047276]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=122976010]
+layout_mode = 2
+text = "Grid Height"
+
+[node name="SpinBox" type="SpinBox" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=205072901]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+min_value = 2.0
+max_value = 4096.0
+value = 2.0
+rounded = true
+custom_arrow_step = 2.0
+custom_arrow_round = true
 
 [node name="ImagePool_FoldableContainer" type="FoldableContainer" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer" unique_id=1598848417]
 layout_mode = 2
+title = "Images"
 
 [node name="ImagePool_ItemList" type="ItemList" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/ImagePool_FoldableContainer" unique_id=301481568]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 200)
 layout_mode = 2
 allow_search = false
-auto_width = true
 scroll_hint_mode = 1
+fixed_column_width = 260
 fixed_icon_size = Vector2i(64, 64)
 script = ExtResource("3_fghij")
 

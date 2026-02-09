@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4e6e0bw02kp5"
-path="res://.godot/imported/hscroll_decrement.png-740c70e0908908e3c0cf3929a9fec6ba.ctex"
+uid="uid://ddh7jpvhkos4x"
+path="res://.godot/imported/menubar_hover.png-fa26eec6faf99c11e6765af04df897fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui_theme/textures/hscroll_decrement.png"
-dest_files=["res://.godot/imported/hscroll_decrement.png-740c70e0908908e3c0cf3929a9fec6ba.ctex"]
+source_file="res://ui_theme/textures/menubar_hover.png"
+dest_files=["res://.godot/imported/menubar_hover.png-fa26eec6faf99c11e6765af04df897fb.ctex"]
 
 [params]
 

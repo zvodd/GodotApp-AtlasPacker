@@ -39,6 +39,8 @@ fixed_icon_size = Vector2i(64, 64)
 
 [node name="VSplitContainer" type="VSplitContainer" parent="HBoxContainer" unique_id=670705168]
 layout_mode = 2
+split_offsets = PackedInt32Array(248)
+split_offset = 248
 
 [node name="Grid" type="GridContainer" parent="HBoxContainer/VSplitContainer" unique_id=12229612]
 clip_contents = true
@@ -97,13 +99,16 @@ layout_mode = 2
 [node name="Panel" type="Panel" parent="HBoxContainer/VSplitContainer" unique_id=452810499]
 layout_mode = 2
 
-[node name="MenuBar" type="MenuBar" parent="HBoxContainer" unique_id=1744797895]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1149821548]
+layout_mode = 2
+
+[node name="MenuBar" type="MenuBar" parent="HBoxContainer/VBoxContainer" unique_id=1744797895]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
 flat = true
 
-[node name="File" type="PopupMenu" parent="HBoxContainer/MenuBar" unique_id=1733363128]
+[node name="File" type="PopupMenu" parent="HBoxContainer/VBoxContainer/MenuBar" unique_id=1733363128]
 oversampling_override = 1.0
 size = Vector2i(195, 200)
 visible = true
@@ -123,3 +128,38 @@ item_5/text = "Thing"
 item_5/icon = ExtResource("2_0bfq4")
 item_5/id = 5
 item_5/separator = true
+
+[node name="File2" type="PopupMenu" parent="HBoxContainer/VBoxContainer/MenuBar" unique_id=1935548432]
+oversampling_override = 1.0
+size = Vector2i(195, 100)
+item_count = 4
+item_0/text = "Open"
+item_0/id = 0
+item_1/text = "Export"
+item_1/id = 1
+item_2/id = 2
+item_2/separator = true
+item_3/text = "Hello"
+item_3/id = 3
+
+[node name="Sample" type="PopupMenu" parent="HBoxContainer/VBoxContainer/MenuBar" unique_id=604449733]
+oversampling_override = 1.0
+size = Vector2i(195, 100)
+item_count = 4
+item_0/text = "Open"
+item_0/id = 0
+item_0/disabled = true
+item_1/text = "Export"
+item_1/id = 1
+item_1/disabled = true
+item_2/id = 2
+item_2/disabled = true
+item_2/separator = true
+item_3/text = "Hello"
+item_3/id = 3
+item_3/disabled = true
+
+[node name="MenuButton" type="MenuButton" parent="HBoxContainer/VBoxContainer" unique_id=767130790]
+layout_mode = 2
+text = "Hello
+"
