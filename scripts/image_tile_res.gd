@@ -9,6 +9,11 @@ var texture : Texture2D
 var image : Image
 var uid : String
 
+func get_ui():
+	if not uid:
+		uid = "ID_%s_%d" % [Time.get_datetime_string_from_system(), randi()]
+	return uid
+
 func get_image():
 	if image:
 		return image
