@@ -32,12 +32,17 @@ flat = true
 
 [node name="File" type="PopupMenu" parent="Panel/VBoxContainer/MenuBar" unique_id=935545317]
 oversampling_override = 1.0
+size = Vector2i(195, 100)
 visible = true
-item_count = 2
+item_count = 4
 item_0/text = "Open"
 item_0/id = 0
 item_1/text = "Export"
 item_1/id = 1
+item_2/id = 2
+item_2/separator = true
+item_3/text = "Hello"
+item_3/id = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1785336403]
 layout_mode = 2

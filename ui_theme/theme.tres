@@ -1,5 +1,13 @@
 [gd_resource type="Theme" format=3 uid="uid://b4apxgfyaatns"]
 
+[ext_resource type="Texture2D" uid="uid://cq66dv3vyb0h1" path="res://ui_theme/textures/vslider_increment.png" id="1_1pfde"]
+[ext_resource type="Texture2D" uid="uid://bmqyv42i1vaah" path="res://ui_theme/textures/panel_container.png" id="1_wvi88"]
+[ext_resource type="Texture2D" uid="uid://c8bf1bybg14uu" path="res://ui_theme/textures/hscroll_increment.png" id="2_qnk3e"]
+[ext_resource type="Texture2D" uid="uid://dmtjft6ljt426" path="res://ui_theme/textures/window_stripe_only.png" id="4_ow4oa"]
+[ext_resource type="Texture2D" uid="uid://b3a8cojaaemol" path="res://ui_theme/textures/window_stripe_only_grey.png" id="4_r7vgm"]
+[ext_resource type="Texture2D" uid="uid://bgf52b16s6o21" path="res://ui_theme/textures/popup_menu_panel.png" id="5_qnk3e"]
+[ext_resource type="Texture2D" uid="uid://cae3g40yeap6f" path="res://ui_theme/textures/seperator_horizontal.png" id="6_ow4oa"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6akc0"]
 content_margin_left = 8.0
 content_margin_top = 6.0
@@ -59,6 +67,42 @@ region_rect = Rect2(0, 0, 23, 23)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udmbm"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1pfde"]
+texture = ExtResource("1_wvi88")
+texture_margin_left = 2.0
+texture_margin_right = 2.0830636
+texture_margin_bottom = 1.9111379
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(2, 2, 14, 14)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y1itd"]
+load_path = "res://.godot/imported/window_stripe_only_grey_grad.png-cd1ea188964f993492b785cf924dbdf1.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6lxpu"]
+texture = SubResource("CompressedTexture2D_y1itd")
+texture_margin_left = 2.0
+texture_margin_top = 4.0
+texture_margin_right = 3.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 0, 480, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mfugg"]
+texture = ExtResource("4_r7vgm")
+texture_margin_left = 2.0
+texture_margin_top = 4.0
+texture_margin_right = 3.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 0, 480, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m6hjx"]
+texture = ExtResource("4_ow4oa")
+texture_margin_left = 2.0
+texture_margin_top = 4.0
+texture_margin_right = 3.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 0, 480, 24)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_facoh"]
 region_rect = Rect2(0, 0, 16, 16)
 
@@ -86,6 +130,11 @@ region_rect = Rect2(0, 0, 8, 4)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0nf5a"]
 region_rect = Rect2(0, 0, 8, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1pfde"]
+bg_color = Color(0.8862615, 0.8862615, 0.88626134, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnk3e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_15vrp"]
 content_margin_left = 6.0
@@ -146,10 +195,19 @@ region_rect = Rect2(0, 0, 16, 16)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6vw7"]
 bg_color = Color(0, 0, 0.501961, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pt0q5"]
-content_margin_left = 3.0
-content_margin_right = 3.0
-region_rect = Rect2(0, 0, 16, 16)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u7pvt"]
+texture = ExtResource("6_ow4oa")
+texture_margin_top = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qnk3e"]
+texture = ExtResource("5_qnk3e")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2alwg"]
 content_margin_left = 8.0
@@ -337,6 +395,13 @@ CheckButton/styles/hover = SubResource("StyleBoxEmpty_oyn5l")
 CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_53mcq")
 CheckButton/styles/normal = SubResource("StyleBoxEmpty_10nrd")
 CheckButton/styles/pressed = SubResource("StyleBoxEmpty_udmbm")
+FoldableContainer/icons/expanded_arrow = ExtResource("1_1pfde")
+FoldableContainer/icons/folded_arrow = ExtResource("2_qnk3e")
+FoldableContainer/styles/panel = SubResource("StyleBoxTexture_1pfde")
+FoldableContainer/styles/title_collapsed_hover_panel = SubResource("StyleBoxTexture_6lxpu")
+FoldableContainer/styles/title_collapsed_panel = SubResource("StyleBoxTexture_mfugg")
+FoldableContainer/styles/title_hover_panel = SubResource("StyleBoxTexture_m6hjx")
+FoldableContainer/styles/title_panel = SubResource("StyleBoxTexture_m6hjx")
 HScrollBar/icons/decrement = null
 HScrollBar/icons/decrement_highlight = null
 HScrollBar/icons/decrement_pressed = null
@@ -356,6 +421,8 @@ HSlider/icons/tick = null
 HSlider/styles/grabber_area = SubResource("StyleBoxTexture_8hwx6")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_ta27f")
 HSlider/styles/slider = SubResource("StyleBoxTexture_0nf5a")
+ItemList/styles/panel = SubResource("StyleBoxFlat_1pfde")
+ItemList/styles/selected = SubResource("StyleBoxFlat_qnk3e")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 0)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -412,7 +479,7 @@ Panel/styles/panel = SubResource("StyleBoxFlat_b4sq5")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_laivy")
 PopupMenu/colors/font_accelerator_color = Color(0, 0, 0, 1)
 PopupMenu/colors/font_color = Color(0, 0, 0, 1)
-PopupMenu/colors/font_disabled_color = Color(0, 0, 0, 1)
+PopupMenu/colors/font_disabled_color = Color(0.40832946, 0.40832946, 0.40832946, 1)
 PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
 PopupMenu/colors/font_outline_color = Color(0, 0, 0, 1)
 PopupMenu/colors/font_separator_color = Color(0, 0, 0, 1)
@@ -439,11 +506,11 @@ PopupMenu/icons/submenu_mirrored = null
 PopupMenu/icons/unchecked = null
 PopupMenu/icons/unchecked_disabled = null
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_x6vw7")
-PopupMenu/styles/labeled_separator_left = null
-PopupMenu/styles/labeled_separator_right = null
-PopupMenu/styles/panel = SubResource("StyleBoxTexture_pt0q5")
-PopupMenu/styles/panel_disabled = null
-PopupMenu/styles/separator = null
+PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxTexture_u7pvt")
+PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxTexture_u7pvt")
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_qnk3e")
+PopupMenu/styles/panel_disabled = SubResource("StyleBoxTexture_qnk3e")
+PopupMenu/styles/separator = SubResource("StyleBoxTexture_u7pvt")
 PopupPanel/styles/panel = SubResource("StyleBoxTexture_2alwg")
 ProgressBar/colors/font_color = Color(1, 1, 1, 1)
 ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
