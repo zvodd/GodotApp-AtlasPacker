@@ -3,11 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://cq66dv3vyb0h1" path="res://ui_theme/textures/vslider_increment.png" id="1_1pfde"]
 [ext_resource type="FontFile" uid="uid://hbk46ctxgvwq" path="res://ui_theme/font/Perfect DOS VGA 437 Win.ttf" id="1_y1itd"]
 [ext_resource type="Texture2D" uid="uid://c8bf1bybg14uu" path="res://ui_theme/textures/hscroll_increment.png" id="2_qnk3e"]
+[ext_resource type="Texture2D" uid="uid://c7lixhopnsa1u" path="res://ui_theme/textures/checkbox_checked.png" id="2_tf380"]
+[ext_resource type="Texture2D" uid="uid://yutx5mpd5rr6" path="res://ui_theme/textures/checkbox_checked_disabled.png" id="3_nvyun"]
 [ext_resource type="Texture2D" uid="uid://fnxwevrcu35o" path="res://ui_theme/textures/panel_window.png" id="4_6lxpu"]
 [ext_resource type="Texture2D" uid="uid://dmtjft6ljt426" path="res://ui_theme/textures/window_stripe_only.png" id="4_ow4oa"]
 [ext_resource type="Texture2D" uid="uid://b3a8cojaaemol" path="res://ui_theme/textures/window_stripe_only_grey.png" id="4_r7vgm"]
+[ext_resource type="Texture2D" uid="uid://lhwage8bhyaj" path="res://ui_theme/textures/radio_checked.png" id="4_ymgys"]
+[ext_resource type="Texture2D" uid="uid://ccn6287m63g5l" path="res://ui_theme/textures/radio_unchecked.png" id="5_p1hg1"]
 [ext_resource type="Texture2D" uid="uid://bgf52b16s6o21" path="res://ui_theme/textures/popup_menu_panel.png" id="5_qnk3e"]
 [ext_resource type="Texture2D" uid="uid://cae3g40yeap6f" path="res://ui_theme/textures/seperator_horizontal.png" id="6_ow4oa"]
+[ext_resource type="Texture2D" uid="uid://w8fbnsohmjll" path="res://ui_theme/textures/checkbox_unchecked.png" id="6_pl1xb"]
+[ext_resource type="Texture2D" uid="uid://brc424fpjrpbc" path="res://ui_theme/textures/checkbox_unchecked_disabled.png" id="7_hmita"]
 [ext_resource type="FontFile" uid="uid://bp3d7g7mqupgu" path="res://ui_theme/font/microsoft_sans_serif.ttf" id="8_m6hjx"]
 [ext_resource type="Texture2D" uid="uid://dy2n7fllqbp30" path="res://ui_theme/textures/tree_arrow.png" id="10_u7pvt"]
 [ext_resource type="Texture2D" uid="uid://cbydcywhi42do" path="res://ui_theme/textures/tree_arrow_up.png" id="11_mfugg"]
@@ -366,18 +372,18 @@ CheckBox/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 CheckBox/colors/font_outline_color = Color(0, 0, 0, 1)
 CheckBox/colors/font_pressed_color = Color(0, 0, 0, 1)
 CheckBox/constants/check_v_offset = 0
-CheckBox/constants/h_separation = 0
+CheckBox/constants/h_separation = 2
 CheckBox/constants/outline_size = 0
 CheckBox/font_sizes/font_size = 11
-CheckBox/fonts/font = null
-CheckBox/icons/checked = null
-CheckBox/icons/checked_disabled = null
-CheckBox/icons/radio_checked = null
-CheckBox/icons/radio_checked_disabled = null
-CheckBox/icons/radio_unchecked = null
-CheckBox/icons/radio_unchecked_disabled = null
-CheckBox/icons/unchecked = null
-CheckBox/icons/unchecked_disabled = null
+CheckBox/fonts/font = ExtResource("8_m6hjx")
+CheckBox/icons/checked = ExtResource("2_tf380")
+CheckBox/icons/checked_disabled = ExtResource("3_nvyun")
+CheckBox/icons/radio_checked = ExtResource("4_ymgys")
+CheckBox/icons/radio_checked_disabled = ExtResource("4_ymgys")
+CheckBox/icons/radio_unchecked = ExtResource("5_p1hg1")
+CheckBox/icons/radio_unchecked_disabled = ExtResource("5_p1hg1")
+CheckBox/icons/unchecked = ExtResource("6_pl1xb")
+CheckBox/icons/unchecked_disabled = ExtResource("7_hmita")
 CheckBox/styles/disabled = SubResource("StyleBoxEmpty_n0ani")
 CheckBox/styles/focus = SubResource("StyleBoxEmpty_03de5")
 CheckBox/styles/hover = SubResource("StyleBoxEmpty_po2xn")

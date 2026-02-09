@@ -8,10 +8,11 @@ func _draw():
 	draw_grid()
 	for uid in image_tiles:
 		var image_tile = image_tiles[uid]
+		var image = image_tile.get_image()
 		var texture = image_tile.get_texture()
 		if texture:
-			var draw_pos = image_tile.position - texture.get_size() * image_tile.scale / 2
-			draw_texture(texture, draw_pos, image_tile.scale)
+			var draw_pos = image_tile.position - image.get_size() * Vector2i(image_tile.scale / 2)
+			draw_texture(texture, draw_pos)
 
 func draw_grid():
 	var width = get_viewport_rect().size.x
@@ -23,7 +24,7 @@ func draw_grid():
 	for i in range(1, int(height / grid_size.y)):
 		draw_line(Vector2(0, i * grid_size.y), Vector2(width, i * grid_size.y), Color.GREEN_YELLOW)
 
-func _can_drop_data(at_position, data):
+func _can_drop_data(_at_position, data):
 	return  data.type == "image_tile"
 
 func _drop_data(at_position, data):
@@ -41,9 +42,13 @@ func add_image_tile(image_tile):
 func _get_drag_data(p_pos):
 	for uid in image_tiles:
 		var image_tile = image_tiles[uid]
+		var image = image_tile.get_image()
 		var texture = image_tile.get_texture()
 		if texture:
-			var rect = Rect2(image_tile.position - texture.get_size() * image_tile.scale / 2, texture.get_size() * image_tile.scale)
+			var rect = Rect2(
+				image_tile.position - image.get_size() * Vector2i(image_tile.scale / 2),
+				image.get_size() * Vector2i(image_tile.scale)
+				)
 			if rect.has_point(p_pos):
 				var data = {}
 				data.type = "image_tile"
@@ -59,5 +64,6 @@ func _get_drag_data(p_pos):
 				return data
 	return null
 
-func update():pass
+func update():
+	queue_redraw()
 #func set_drag_preview(_a):pass

@@ -34,4 +34,5 @@ func _on_files_selected(files:PackedStringArray):
 		var image_tile = ImageTile.new()
 		image_tile.file_name = file
 		image_tile.uid = OS.get_unique_id()
+		print(image_tile.uid)
 		image_pool.add_image_tile(image_tile)

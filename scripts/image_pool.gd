@@ -3,13 +3,13 @@ extends ItemList
 
 var image_tiles = []
 
-func _can_drop_data(at_position, data):
+func _can_drop_data(_at_position, data):
 	return (
 		data.type == "files"
 		# or data.type == "image_tile"
 		)
 
-func _drop_data(at_position, data):
+func _drop_data(_at_position, data):
 	if data.type == "files":
 		var files = data.files
 		for file in files:
@@ -40,12 +40,12 @@ func _get_drag_data(p_pos):
 
 		var preview = TextureRect.new()
 		preview.texture = image_tile.get_texture()
-		preview.size = Vector2(64, 64)
+		preview.size = Vector2(min(64, preview.texture.get_width()), min(64, preview.texture.get_height()))
 		set_drag_preview(preview)
 
 		return data
 	return null
 
 func _add_item(text:String, icon:Texture2D=null, selectable:bool=true):
-	var item_index = get_item_count()
+	#var item_index = get_item_count()
 	super.add_item(text, icon, selectable)

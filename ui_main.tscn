@@ -32,12 +32,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MenuBar" type="MenuBar" parent="Panel/VBoxContainer" unique_id=286757585]
+[node name="PanelContainerMenuBar" type="PanelContainer" parent="Panel/VBoxContainer" unique_id=1988109807]
+layout_mode = 2
+
+[node name="MenuBar" type="MenuBar" parent="Panel/VBoxContainer/PanelContainerMenuBar" unique_id=286757585]
 unique_name_in_owner = true
 layout_mode = 2
 flat = true
 
-[node name="File" type="PopupMenu" parent="Panel/VBoxContainer/MenuBar" unique_id=935545317]
+[node name="File" type="PopupMenu" parent="Panel/VBoxContainer/PanelContainerMenuBar/MenuBar" unique_id=935545317]
 oversampling_override = 1.0
 size = Vector2i(195, 100)
 item_count = 4
@@ -50,7 +53,7 @@ item_2/separator = true
 item_3/text = "Hello"
 item_3/id = 3
 
-[node name="Sample" type="PopupMenu" parent="Panel/VBoxContainer/MenuBar" unique_id=61045446]
+[node name="Sample" type="PopupMenu" parent="Panel/VBoxContainer/PanelContainerMenuBar/MenuBar" unique_id=61045446]
 oversampling_override = 1.0
 size = Vector2i(195, 100)
 item_count = 4
@@ -98,8 +101,9 @@ layout_mode = 2
 text = "Grid Width"
 
 [node name="SpinBox" type="SpinBox" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1122031868]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 10
 size_flags_vertical = 0
 min_value = 2.0
 max_value = 4096.0
@@ -108,16 +112,21 @@ rounded = true
 custom_arrow_step = 2.0
 custom_arrow_round = true
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer/MarginContainer/VBoxContainer" unique_id=112047276]
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer/MarginContainer/VBoxContainer" unique_id=406979852]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=122976010]
+[node name="CheckBox" type="CheckBox" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=213178208]
+layout_mode = 2
+text = " "
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=604667068]
 layout_mode = 2
 text = "Grid Height"
 
-[node name="SpinBox" type="SpinBox" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=205072901]
+[node name="SpinBox" type="SpinBox" parent="Panel/VBoxContainer/HBoxContainer/SidePanel_VBoxContainer/GlobalConfig_FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1630176149]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 10
 size_flags_vertical = 0
 min_value = 2.0
 max_value = 4096.0
@@ -142,4 +151,12 @@ script = ExtResource("3_fghij")
 
 [node name="Artboard" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1760129244 instance=ExtResource("3_6ydbi")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 600)
 layout_mode = 2
+
+[node name="PanelContainerStatus" type="PanelContainer" parent="Panel/VBoxContainer" unique_id=435826842]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="Panel/VBoxContainer/PanelContainerStatus" unique_id=1534619057]
+layout_mode = 2
+text = "Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa "
